@@ -1,0 +1,156 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "<nombre de invocación del skill aquí>",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "información",
+                        "qué es esto",
+                        "necesito ayuda",
+                        "help me",
+                        "ayúdame",
+                        "ayuda"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "apaga",
+                        "para",
+                        "terminar",
+                        "salir"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "BuscarIntent",
+                    "slots": [
+                        {
+                            "name": "tituloSlot",
+                            "type": "AMAZON.SearchQuery"
+                        },
+                        {
+                            "name": "fuenteSlot",
+                            "type": "Fuente",
+                            "samples": [
+                                "{fuenteSlot}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "busca {tituloSlot}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "Fuente",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "el mundo",
+                                "synonyms": [
+                                    "elmundo"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "no lo sé",
+                                "synonyms": [
+                                    "no conozco la fuente",
+                                    "no sé la fuente",
+                                    "no tengo la fuente",
+                                    "no tengo fuente",
+                                    "no",
+                                    "nada",
+                                    "no tengo",
+                                    "no sé",
+                                    "lo desconozco",
+                                    "ni idea"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "doce minutos",
+                                "synonyms": [
+                                    "doce minutos punto com",
+                                    "12 minutos"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "diario información",
+                                "synonyms": [
+                                    "diario información punto com",
+                                    "el diario información"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "el mundo today",
+                                "synonyms": [
+                                    "el mundo today punto com",
+                                    "el mundo tudei",
+                                    "el mundo tudai",
+                                    "elmundotoday"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "BuscarIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "tituloSlot",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "fuenteSlot",
+                            "type": "Fuente",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.55408244627.1037911636972"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.55408244627.1037911636972",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Puedes decir también el nombre del periódico o decir no lo sé. En qué periódico lo has leído?"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "NoticiasFalsas",
+  "version": "1.0.0",
+  "description": "Skill para comprobar si una noticia es falsa o real.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "noticias",
+    "falsas",
+    "fake",
+    "news",
+    "fakenews"
+  ],
+  "author": "Javier Campos",
+  "license": "MIT",
+  "dependencies": {
+    "ask-sdk-core": "^2.0.0",
+    "ask-sdk-model": "^1.0.0"
+  }
+}
